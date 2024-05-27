@@ -12,14 +12,14 @@ namespace praVj06.Controllers
         {
             this.pokemonService = pokemonService;
         }
-        [HttpGet(Name = "getPokemon")]
-        public IActionResult Get()
+        [HttpGet("[action]")]
+        public IActionResult GetAllPokemons()
         {
             return Ok(pokemonService.GetPokemons());
         }
 
-        [HttpGet(Name = "getPokemonByID")]
-        public IActionResult Get(int id)
+        [HttpGet("[action]")]
+        public IActionResult GetPokemon(int id)
         {
             return Ok(pokemonService.GetPokemon(id));
         }
