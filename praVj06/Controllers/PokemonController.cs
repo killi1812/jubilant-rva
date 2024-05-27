@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
-using praVj06.Dtos;
+﻿using Microsoft.AspNetCore.Mvc;
 using praVj06.Services;
 
 namespace praVj06.Controllers

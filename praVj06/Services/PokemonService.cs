@@ -1,4 +1,5 @@
 ﻿using praVj06.Dtos;
+using System.Globalization;
 
 namespace praVj06.Services
 {
@@ -36,12 +37,12 @@ namespace praVj06.Services
 
         public PokemonDto GetPokemon(int id)
         {
-            throw new NotImplementedException();
+            return pokemons[id];
         }
 
         public List<PokemonDto> GetPokemons()
         {
-            throw new NotImplementedException();
+            return pokemons;
         }
     }
 }
