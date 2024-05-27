@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using praVj06.Dtos;
+using praVj06.Services;
 
 namespace praVj06.Controllers
 {
@@ -7,17 +10,21 @@ namespace praVj06.Controllers
     [ApiController]
     public class PokemonController : ControllerBase
     {
-        [HttpGet(Name = "getPokemon")]
-        public IEnumerable<ActionResult> Get()
+        private readonly IPokemonService pokemonService;
+        public PokemonController(IPokemonService pokemonService)
         {
-            throw new NotImplementedException();
+            this.pokemonService = pokemonService;
+        }
+        [HttpGet(Name = "getPokemon")]
+        public IActionResult Get()
+        {
+            return Ok(pokemonService.GetPokemons());
         }
 
         [HttpGet(Name = "getPokemonByID")]
-        public IEnumerable<ActionResult> Get(int id)
+        public IActionResult Get(int id)
         {
-            throw new NotImplementedException();
+            return Ok(pokemonService.GetPokemon(id));
         }
-
     }
 }
