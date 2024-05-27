@@ -1,5 +1,4 @@
 ﻿using praVj06.Dtos;
-using System.Globalization;
 
 namespace praVj06.Services
 {
@@ -37,7 +36,7 @@ namespace praVj06.Services
 
         public PokemonDto GetPokemon(int id)
         {
-            return pokemons[id];
+            return pokemons.FirstOrDefault(p => p.Id == id);
         }
 
         public List<PokemonDto> GetPokemons()
