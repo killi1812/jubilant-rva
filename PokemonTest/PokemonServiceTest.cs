@@ -18,5 +18,21 @@ namespace PokemonTest
 
             Assert.NotEqual(0,list.Count);
         }
+
+        [Fact]
+        public void GetPokemonByID_ShouldReturnCorrectPokemon()
+        {
+            //Arrange
+
+            int id = 1;
+            IPokemonService service = new PokemonService();
+
+            //Act
+
+            var pokemon = service.GetPokemon(1);
+
+            //Assert
+            Assert.Equal(id,pokemon.Id);
+        }
     }
 }
